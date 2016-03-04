@@ -183,9 +183,12 @@ public class Booksoft {
                             case 1:
                                 System.out.println("Digite el nombre del Libro que desea Prestar");
                                 name = lector.next();
+                               
                                 for(int i=0; i<contUs;i++){
+                                    
                                     if (name.equals(Datos[i].getNombre())){
                                         cantidad = Datos[i].getCantidad();
+                                        System.out.println("Cantidad disponible: "+cantidad);
                                         band = 1;
                                         if (cantidad>0){
                                             Libros[contPre] =new Prestamo();//Genera la Posicion del usuario que prestó el libro
@@ -201,7 +204,7 @@ public class Booksoft {
                                             contPre++;
                                             
                                         }
-                                        else
+                                    else
                                             System.out.println("No hay libros disponibles");
                                         }
                                 }
@@ -210,7 +213,9 @@ public class Booksoft {
                                 }
                                 else
                                     band=0;// si no hago esto funcionaria solo la primera vez
-                                //System.out.println("este es el valor de contpre al final: "+contPre);
+                                    //cantidad=0;
+                                    //libpre=0;
+                                
                             break;
                 
                             case 2:
@@ -259,8 +264,9 @@ public class Booksoft {
                                         System.out.println("El Nombre del Libro prestado es: "+Libros[i].getNombr());
                                         System.out.println("El Autor del Libro es: "+Libros[i].getAuto());
                                         System.out.println("El Código del Libro es: "+Libros[i].getCodig());
-                                        System.out.println("La Cantidad disponible del libro es: "+Datos[i].getCantidad());
+                                        //System.out.println("La Cantidad disponible del libro es: "+Datos[i].getCantidad());
                                         System.out.println("El Area del Libro es: "+Libros[i].getArea());
+                                        System.out.println("La Cedula del Usuario es: "+Libros[i].getCedula());
                                     }
                                 }
                                 else
